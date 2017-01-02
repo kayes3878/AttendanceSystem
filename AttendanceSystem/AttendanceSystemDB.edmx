@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AttendanceSystemDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Attandence">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeId" Type="int" />
+          <Property Name="DateOfAttandence" Type="date" />
+          <Property Name="CheckInTime" Type="time" Precision="7" />
+          <Property Name="CheckOutTime" Type="time" Precision="7" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CheckOutStatus" Type="bit" />
+        </EntityType>
+        <EntityType Name="EmployeeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="CreatedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="UserRoll" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Attandence_EmployeeInfo">
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="0..1" />
+          <End Role="Attandence" Type="Self.Attandence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Attandence">
+              <PropertyRef Name="EmployeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_EmployeeInfo">
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AttendanceSystemDBModelStoreContainer">
+          <EntitySet Name="Attandence" EntityType="Self.Attandence" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeInfo" EntityType="Self.EmployeeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Attandence_EmployeeInfo" Association="Self.FK_Attandence_EmployeeInfo">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+            <End Role="Attandence" EntitySet="Attandence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_EmployeeInfo" Association="Self.FK_User_EmployeeInfo">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AttendanceSystemDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Attandence">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeId" Type="Int32" />
+          <Property Name="DateOfAttandence" Type="DateTime" Precision="0" />
+          <Property Name="CheckInTime" Type="Time" Precision="7" />
+          <Property Name="CheckOutTime" Type="Time" Precision="7" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CheckOutStatus" Type="Boolean" />
+          <NavigationProperty Name="EmployeeInfo" Relationship="Self.FK_Attandence_EmployeeInfo" FromRole="Attandence" ToRole="EmployeeInfo" />
+        </EntityType>
+        <EntityType Name="EmployeeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Attandences" Relationship="Self.FK_Attandence_EmployeeInfo" FromRole="EmployeeInfo" ToRole="Attandence" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_User_EmployeeInfo" FromRole="EmployeeInfo" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UserRoll" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EmployeeInfo" Relationship="Self.FK_User_EmployeeInfo" FromRole="User" ToRole="EmployeeInfo" />
+        </EntityType>
+        <Association Name="FK_Attandence_EmployeeInfo">
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="0..1" />
+          <End Role="Attandence" Type="Self.Attandence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Attandence">
+              <PropertyRef Name="EmployeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_EmployeeInfo">
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AttendanceSystemDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Attandences" EntityType="Self.Attandence" />
+          <EntitySet Name="EmployeeInfoes" EntityType="Self.EmployeeInfo" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Attandence_EmployeeInfo" Association="Self.FK_Attandence_EmployeeInfo">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+            <End Role="Attandence" EntitySet="Attandences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_EmployeeInfo" Association="Self.FK_User_EmployeeInfo">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AttendanceSystemDBModelStoreContainer" CdmEntityContainer="AttendanceSystemDBEntities">
+          <EntitySetMapping Name="Attandences">
+            <EntityTypeMapping TypeName="AttendanceSystemDBModel.Attandence">
+              <MappingFragment StoreEntitySet="Attandence">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmployeId" ColumnName="EmployeId" />
+                <ScalarProperty Name="DateOfAttandence" ColumnName="DateOfAttandence" />
+                <ScalarProperty Name="CheckInTime" ColumnName="CheckInTime" />
+                <ScalarProperty Name="CheckOutTime" ColumnName="CheckOutTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CheckOutStatus" ColumnName="CheckOutStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeInfoes">
+            <EntityTypeMapping TypeName="AttendanceSystemDBModel.EmployeeInfo">
+              <MappingFragment StoreEntitySet="EmployeeInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="AttendanceSystemDBModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UserRoll" ColumnName="UserRoll" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

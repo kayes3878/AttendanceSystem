@@ -1,0 +1,20 @@
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\bin\Debug\AttendanceSystem.exe.config
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem.csprojResolveAssemblyReference.cache
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\MainWindow.baml
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\MainWindow.g.cs
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\App.g.cs
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem_MarkupCompile.cache
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem.g.resources
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem.Properties.Resources.resources
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem.csproj.GenerateResource.Cache
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\bin\Debug\AttendanceSystem.exe
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\bin\Debug\AttendanceSystem.pdb
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem.exe
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem.pdb
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\bin\Debug\EntityFramework.dll
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\bin\Debug\EntityFramework.SqlServer.dll
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\bin\Debug\EntityFramework.xml
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\bin\Debug\EntityFramework.SqlServer.xml
+E:\Application\AttendanceSystem\AttendanceSystem\bin\Debug\AttendanceSystem.exe.config
+E:\Application\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem.exe
+E:\Application\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem.pdb
