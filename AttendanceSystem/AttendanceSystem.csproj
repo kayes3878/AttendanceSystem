@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -62,22 +63,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Attandence.cs">
-      <DependentUpon>AttendanceSystemDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AttendanceSystemDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AttendanceSystemDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeInfo.cs">
-      <DependentUpon>AttendanceSystemDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entity\Attandence.cs" />
     <Compile Include="Entity\EmployeeInfo.cs" />
     <Compile Include="Entity\User.cs" />
-    <Compile Include="User.cs">
-      <DependentUpon>AttendanceSystemDB.tt</DependentUpon>
+    <Compile Include="UI\CreateEmployee.xaml.cs">
+      <DependentUpon>CreateEmployee.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -87,20 +77,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AttendanceSystemDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AttendanceSystemDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AttendanceSystemDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AttendanceSystemDB.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UI\CreateEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -120,23 +104,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="AttendanceSystemDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AttendanceSystemDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="AttendanceSystemDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AttendanceSystemDB.edmx</DependentUpon>
-      <LastGenOutput>AttendanceSystemDB.Context.cs</LastGenOutput>
-    </None>
-    <None Include="AttendanceSystemDB.edmx.diagram">
-      <DependentUpon>AttendanceSystemDB.edmx</DependentUpon>
-    </None>
-    <None Include="AttendanceSystemDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AttendanceSystemDB.edmx</DependentUpon>
-      <LastGenOutput>AttendanceSystemDB.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -150,7 +117,18 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DATA\DATA.csproj">
+      <Project>{e52a1924-9ad7-4cb6-87ca-66b6c8268dd2}</Project>
+      <Name>DATA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

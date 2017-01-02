@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AttendanceSystemDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Attandence">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeId" Type="int" />
+    <Property Name="DateOfAttandence" Type="date" />
+    <Property Name="CheckInTime" Type="time" Precision="7" />
+    <Property Name="CheckOutTime" Type="time" Precision="7" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CheckOutStatus" Type="bit" />
+  </EntityType>
+  <EntityType Name="EmployeeInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="UserRoll" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Attandence_EmployeeInfo">
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="0..1" />
+    <End Role="Attandence" Type="Self.Attandence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attandence">
+        <PropertyRef Name="EmployeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_EmployeeInfo">
+    <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AttendanceSystemDBModelStoreContainer">
+    <EntitySet Name="Attandence" EntityType="Self.Attandence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeInfo" EntityType="Self.EmployeeInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Attandence_EmployeeInfo" Association="Self.FK_Attandence_EmployeeInfo">
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+      <End Role="Attandence" EntitySet="Attandence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_EmployeeInfo" Association="Self.FK_User_EmployeeInfo">
+      <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

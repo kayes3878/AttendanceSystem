@@ -1,7 +1,9 @@
 ﻿<Application x:Class="AttendanceSystem.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+             StartupUri="UI/CreateEmployee.xaml">
+    <!--StartupUri="UI/CreateEmployee.xaml">-->
+    <!--StartupUri="MainWindow.xaml">-->
     <Application.Resources>
          
     </Application.Resources>

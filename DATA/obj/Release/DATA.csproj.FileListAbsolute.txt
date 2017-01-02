@@ -1,0 +1,9 @@
+E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Release\DATA.dll.config
+E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Release\DATA.dll
+E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Release\DATA.pdb
+E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Release\EntityFramework.dll
+E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Release\EntityFramework.SqlServer.dll
+E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Release\EntityFramework.xml
+E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Release\EntityFramework.SqlServer.xml
+E:\Soft\Kayes_app\AttendanceSystem\DATA\obj\Release\DATA.dll
+E:\Soft\Kayes_app\AttendanceSystem\DATA\obj\Release\DATA.pdb

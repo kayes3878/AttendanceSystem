@@ -3,14 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <UniformGrid x:Name="grid">
-        <ListBox x:Name="LB_Playlist" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Height="454" Margin="0,23,0,0" VerticalAlignment="Top" Width="264" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" ItemTemplate="{DynamicResource PlayListItem}" ScrollViewer.VerticalScrollBarVisibility="Hidden">
-            <ListBox.Resources>
-                <DataTemplate x:Key="PlayListItem">
-                    <Grid Width="127" Height="105">
-                        <Label x:Name="L_PlayListName" Content="{Binding Path=PlayList_Name}" HorizontalAlignment="Stretch" Margin="16" Width="Auto" Height="Auto" Background="#26000000" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="BankGothic Lt BT"/>
-                    </Grid>
+        
+        <ListBox MouseDoubleClick="EmployeeListBox_MouseDoubleClick" x:Name="EmployeeListBox" ItemsSource="{Binding ActorList}" Width="300"
+         ScrollViewer.CanContentScroll="False">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Photo}" Height="120" Margin="5"/>
+                        <StackPanel Margin="10,0">
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                            <TextBlock Text="{Binding Email}"/>
+                            <TextBlock Text="{Binding Designation}" FontStyle="Italic"/>
+                        </StackPanel>
+                    </StackPanel>
                 </DataTemplate>
-            </ListBox.Resources>
+            </ListBox.ItemTemplate>
         </ListBox>
     </UniformGrid>
 </Window>

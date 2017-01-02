@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AttendanceSystem.Entity;
+using DATA;
 
 namespace AttendanceSystem
 {
@@ -24,7 +26,20 @@ namespace AttendanceSystem
         public MainWindow()
         {
             InitializeComponent();
-            DynamicButtonCreate();
+            //DynamicButtonCreate();
+            LoadAllEmployee();
+
+        }
+
+        private void LoadAllEmployee()
+        {
+            List<AttendanceSystem.Entity.EmployeeInfo> items = new List<AttendanceSystem.Entity.EmployeeInfo>();
+            //items.Add(new TodoItem() { Title = "Complete this WPF tutorial", Completion = 45 });
+            //items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
+            //items.Add(new TodoItem() { Title = "Wash the car", Completion = 0 });
+            //EmployeeListBox.ItemsSource = _allemployeeObjList;
+            items = GetAllEmployee();
+            EmployeeListBox.ItemsSource = items;
         }
 
         private void DynamicButtonCreate()
@@ -46,21 +61,21 @@ namespace AttendanceSystem
             Button clicked = (Button)sender;
             MessageBox.Show("Button's name is: " + clicked.Name);
             Console.WriteLine(string.Format("You clicked on the {0}. button.", (sender as Button).Tag));
+
         }
 
-        public List<EmployeeInfo> GetAllEmployee()
+        public List<AttendanceSystem.Entity.EmployeeInfo> GetAllEmployee()
         {
             attendanceSystemDBEntitiesObj = new AttendanceSystemDBEntities();
 
-            //EmployeeInfo _employeeInfoObj = new EmployeeInfo();
+            AttendanceSystem.Entity.EmployeeInfo _employeeInfoObj = new AttendanceSystem.Entity.EmployeeInfo();
 
-            List<EmployeeInfo> _allemployeeObjList = new List<EmployeeInfo>();
+            List<AttendanceSystem.Entity.EmployeeInfo> _allemployeeObjList = new List<AttendanceSystem.Entity.EmployeeInfo>();
 
             foreach (var s in (from p in attendanceSystemDBEntitiesObj.EmployeeInfoes select p))
             {
-                EmployeeInfo employeeInfoObj = new EmployeeInfo();
-
-                employeeInfoObj = new EmployeeInfo
+                AttendanceSystem.Entity.EmployeeInfo employeeInfoObj = new AttendanceSystem.Entity.EmployeeInfo();
+                employeeInfoObj = new AttendanceSystem.Entity.EmployeeInfo
                 {
                     Name = s.Name,
                     Email = s.Email,
@@ -75,6 +90,15 @@ namespace AttendanceSystem
                 _allemployeeObjList.Add(employeeInfoObj);
             }
             return _allemployeeObjList;
+        }
+
+        private void EmployeeListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Entity.EmployeeInfo employeeInfoObj = new Entity.EmployeeInfo();
+            int index = EmployeeListBox.SelectedIndex;
+            //string name = EmployeeListBox.SelectedItem(employeeInfoObj.Name);
+            MessageBox.Show(index.ToString());
+
         }
     }
 }

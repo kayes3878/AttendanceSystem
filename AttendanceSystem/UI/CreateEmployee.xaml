@@ -1,0 +1,30 @@
+﻿<Window x:Class="AttendanceSystem.UI.CreateEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CreateEmployee" Height="377.613" Width="501.492" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox Header="INFO" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid>
+                <Button Content="SAVE" HorizontalAlignment="Left" Margin="207,290,0,0" Width="75" Height="20" VerticalAlignment="Top"/>
+                <TextBox Name="NameTextbox" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272"/>
+                <Label Content="Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="EmailTextbox" HorizontalAlignment="Left" Height="23" Margin="10,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272"/>
+                <Label Content="Email" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="MobileTextBox" HorizontalAlignment="Left" Height="23" Margin="10,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272"/>
+                <Label Content="Mobile" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="DesignationTextbox" HorizontalAlignment="Left" Height="23" Margin="10,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272"/>
+                <Label Content="Designation" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top"/>
+                <Label Content="DateOfBirth" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top"/>
+                <DatePicker Name="DateOfBirthDatepicker" HorizontalAlignment="Left" Margin="10,247,0,0" VerticalAlignment="Top" Width="272"/>
+                <Button Content="SAVE" HorizontalAlignment="Left" Margin="207,290,0,0" Width="75" Height="20" VerticalAlignment="Top" Name="saveButton" Click="saveButton_Click"/>
+                <Button Content="CLEAR" HorizontalAlignment="Left" Margin="127,290,0,0" Width="75" Height="20" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="PHOTO" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="294,0,0,0" Width="185">
+            <Grid>
+                <Image Stretch="Fill" Name="employeePhoto" Margin="5,0,0,0" HorizontalAlignment="Left" Width="162" Height="144" VerticalAlignment="Top"/>
+                <Button Content="Chose" Name="choseEmployeePhoto" Click="choseEmployeePhoto_Click" Margin="88,153,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

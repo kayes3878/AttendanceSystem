@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\
+E:\Soft\Kayes_app\AttendanceSystem\AttendanceSystem\obj\Debug\
 AttendanceSystem
 none
 false
 DEBUG;TRACE
-F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\App.xaml
-11151548125
+E:\Soft\Kayes_app\AttendanceSystem\AttendanceSystem\App.xaml
+21623461906
 
-14-344461039
-17-180535950
-MainWindow.xaml;
+91684573826
+191518386211
+MainWindow.xaml;UI\CreateEmployee.xaml;
 
 False
 
