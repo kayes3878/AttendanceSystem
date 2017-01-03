@@ -24,7 +24,7 @@
     <Property Name="Designation" Type="nvarchar" MaxLength="50" />
     <Property Name="Status" Type="bit" />
     <Property Name="Photo" Type="image" />
-    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" />
   </EntityType>
   <EntityType Name="User">
     <Key>

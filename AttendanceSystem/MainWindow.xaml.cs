@@ -82,7 +82,7 @@ namespace AttendanceSystem
                     Mobile = s.Mobile,
                     Designation = s.Designation,
                     DateOfBirth = s.DateOfBirth,
-                    CreatedDate = s.CreatedDate,
+                    //CreatedDate = s.CreatedDate,
                     Photo = s.Photo,
                     Status = s.Status,
                 };
