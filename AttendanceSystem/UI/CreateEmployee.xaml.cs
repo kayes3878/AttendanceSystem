@@ -122,5 +122,8 @@ namespace AttendanceSystem.UI
             aSEntitiesObj.EmployeeInfoes.Add(newEmployee);
             aSEntitiesObj.SaveChanges();
         }
+
+         
+         
     }
 }

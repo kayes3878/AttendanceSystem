@@ -7,4 +7,3 @@ E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Debug\EntityFramework.xml
 E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Debug\EntityFramework.SqlServer.xml
 E:\Soft\Kayes_app\AttendanceSystem\DATA\obj\Debug\DATA.dll
 E:\Soft\Kayes_app\AttendanceSystem\DATA\obj\Debug\DATA.pdb
-E:\Soft\Kayes_app\AttendanceSystem\DATA\obj\Debug\DATA.csprojResolveAssemblyReference.cache

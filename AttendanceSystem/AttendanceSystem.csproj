@@ -54,6 +54,14 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="TableDependency, Version=4.8.4.0, Culture=neutral, PublicKeyToken=997305cc1a8bb802, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlTableDependency.4.8.4.0\lib\TableDependency.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TableDependency.SqlClient, Version=4.8.4.0, Culture=neutral, PublicKeyToken=c3b0a3ab9ceb00ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlTableDependency.4.8.4.0\lib\TableDependency.SqlClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

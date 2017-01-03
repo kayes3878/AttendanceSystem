@@ -4,7 +4,7 @@
         Title="MainWindow" Height="350" Width="525">
     <UniformGrid x:Name="grid">
         
-        <ListBox MouseDoubleClick="EmployeeListBox_MouseDoubleClick" x:Name="EmployeeListBox" ItemsSource="{Binding ActorList}" Width="300"
+        <ListBox  MouseDoubleClick="EmployeeListBox_MouseDoubleClick" x:Name="EmployeeListBox" ItemsSource="{Binding ActorList}" Width="300"
          ScrollViewer.CanContentScroll="False">
             <ListBox.ItemTemplate>
                 <DataTemplate>
