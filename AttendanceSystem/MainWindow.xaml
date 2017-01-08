@@ -9,7 +9,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding Photo}" Height="120" Margin="5"/>
+                        <Image Source="{Binding Photo}" Width="115" Height="120" Margin="5"/>
                         <StackPanel Margin="10,0">
                             <TextBlock Text="{Binding Name}" FontWeight="Bold" />
                             <TextBlock Text="{Binding Email}"/>
