@@ -7,3 +7,13 @@ E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Debug\EntityFramework.xml
 E:\Soft\Kayes_app\AttendanceSystem\DATA\bin\Debug\EntityFramework.SqlServer.xml
 E:\Soft\Kayes_app\AttendanceSystem\DATA\obj\Debug\DATA.dll
 E:\Soft\Kayes_app\AttendanceSystem\DATA\obj\Debug\DATA.pdb
+F:\KAYES WORKSPACE\AttendanceSystem\DATA\bin\Debug\DATA.dll.config
+F:\KAYES WORKSPACE\AttendanceSystem\DATA\bin\Debug\DATA.dll
+F:\KAYES WORKSPACE\AttendanceSystem\DATA\bin\Debug\DATA.pdb
+F:\KAYES WORKSPACE\AttendanceSystem\DATA\bin\Debug\EntityFramework.dll
+F:\KAYES WORKSPACE\AttendanceSystem\DATA\bin\Debug\EntityFramework.SqlServer.dll
+F:\KAYES WORKSPACE\AttendanceSystem\DATA\bin\Debug\EntityFramework.xml
+F:\KAYES WORKSPACE\AttendanceSystem\DATA\bin\Debug\EntityFramework.SqlServer.xml
+F:\KAYES WORKSPACE\AttendanceSystem\DATA\obj\Debug\DATA.csprojResolveAssemblyReference.cache
+F:\KAYES WORKSPACE\AttendanceSystem\DATA\obj\Debug\DATA.dll
+F:\KAYES WORKSPACE\AttendanceSystem\DATA\obj\Debug\DATA.pdb

@@ -28,6 +28,8 @@ namespace AttendanceSystem
         public MainWindow()
         {
             InitializeComponent();
+            //this.right = SystemParameters.PrimaryScreenWidth - this.Width;
+           
             //DynamicButtonCreate();
             LoadAllEmployee();
 

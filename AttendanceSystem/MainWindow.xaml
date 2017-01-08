@@ -1,11 +1,11 @@
 ﻿<Window x:Class="AttendanceSystem.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <UniformGrid x:Name="grid">
-        
-        <ListBox  MouseDoubleClick="EmployeeListBox_MouseDoubleClick" x:Name="EmployeeListBox" ItemsSource="{Binding ActorList}" Width="300"
-         ScrollViewer.CanContentScroll="False">
+        Title="Participants" WindowState="Maximized" MaxWidth="300" Width="298.509" Height="533.507" WindowStartupLocation="Manual" 
+    Top="0" Left="0">
+    <UniformGrid x:Name="grid" Margin="0,0,469,-4">
+        <ListBox  MouseDoubleClick="EmployeeListBox_MouseDoubleClick" x:Name="EmployeeListBox" ItemsSource="{Binding ActorList}"
+         ScrollViewer.CanContentScroll="False" Margin="10,17,-275,23" HorizontalAlignment="Left" Width="265">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

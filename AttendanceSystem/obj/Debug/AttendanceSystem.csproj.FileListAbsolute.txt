@@ -39,3 +39,7 @@ E:\Soft\Kayes_app\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem.c
 E:\Soft\Kayes_app\AttendanceSystem\AttendanceSystem\obj\Debug\AttendanceSystem.pdb
 E:\Soft\Kayes_app\AttendanceSystem\AttendanceSystem\obj\Debug\UI\CreateEmployee.baml
 E:\Soft\Kayes_app\AttendanceSystem\AttendanceSystem\obj\Debug\UI\CreateEmployee.g.cs
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\bin\Debug\DATA.dll
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\bin\Debug\DATA.pdb
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\UI\CreateEmployee.baml
+F:\KAYES WORKSPACE\AttendanceSystem\AttendanceSystem\obj\Debug\UI\CreateEmployee.g.cs
